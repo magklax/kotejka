@@ -1,0 +1,59 @@
+.banner--page {
+  height: 496px;
+  margin-bottom: 70px;
+  padding: 50px 25px;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 8px;
+  background: transparent url("../img/banner-page-mobile.png") no-repeat;
+
+  .title {
+    margin-bottom: 15px;
+    font-size: 24px;
+    font-weight: 700;
+
+    .big {
+      font-size: 37px;
+    }
+  }
+
+  .banner__info {
+    margin-bottom: 30px;
+  }
+
+  .rooms__btn span {
+    font-weight: 700;
+  }
+}
+
+@media(min-width: $min-tablet) {
+  .banner--page {
+    height: 359px;
+    margin-bottom: 120px;
+    padding: 60px 300px 65px 50px;
+    text-align: left;
+    background-image: url("../img/banner-page-tablet.png");
+
+    .title {
+      font-size: 36px;
+
+      .big {
+        font-size: 56px;
+      }
+    }
+
+    .banner__btn {
+      margin-left: 0;
+    }
+  }
+}
+
+@media(min-width: $min-desktop) {
+  .banner--page {
+    height: 379px;
+    margin-bottom: 140px;
+    background-image: url("../img/banner-page-desktop.png");
+    padding-right: 500px;
+    padding-left: 260px;
+  }
+}

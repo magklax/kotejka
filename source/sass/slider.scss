@@ -1,0 +1,86 @@
+.slider {
+  margin-bottom: 30px;
+}
+
+.slider__wrapper {
+  display: flex;
+}
+
+.slider__arrows {
+  display: none;
+}
+
+.slider__dots {
+  font-size: 0;
+}
+
+.slider__dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin: 0 6px;
+  vertical-align: top;
+  background-color: $gray;
+  border: 2px solid $gray;
+  border-radius: 50%;
+  cursor: pointer;
+  user-select: none;
+  tap-highlight-color: transparent;
+
+  &:hover,
+  &:focus {
+    transition: 0.3s ease-in;
+    border: 2px solid $yellow;
+  }
+
+  &.active {
+    background-color: $yellow;
+    border: 2px solid $yellow;
+  }
+}
+
+@media(max-width: $max-mobile) {
+  .slider {
+    box-shadow: $shadow-1;
+    border-radius: 8px;
+    background-color: $white;
+  }
+}
+
+@media(min-width: $min-tablet) {
+  #slider-2 {
+    margin-top: -35px;
+    margin-bottom: 40px;
+    padding: 35px 0;
+  }
+
+  .slider__controls {
+    position: relative;
+  }
+
+  .slider__arrows {
+    display: block;
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .slider__arrows button {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0px 2px 12px rgba(173, 152, 143, 0.25);
+    background: transparent url("../img/icon-arrow.svg") center no-repeat;
+
+    &#next-1,
+    &#next-2, {
+      transform: rotate(180deg);
+    }
+  }
+
+
+}

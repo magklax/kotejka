@@ -1,0 +1,126 @@
+.rooms {
+  background-image: url("../img/fish.svg");
+  background-repeat: no-repeat;
+  background-size: 150px 46px;
+  background-position: calc((100% - 170px) / 2) 40px;
+}
+
+.rooms__block {
+  margin: 0;
+}
+
+.rooms__block .picture {
+  vertical-align: bottom;
+}
+
+.rooms__block .item {
+  padding: 25px;
+}
+
+.rooms__title {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.rooms__params {
+  margin-bottom: 20px;
+}
+
+.rooms .rooms__params li {
+  position: relative;
+  padding: 0 20px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    top: 3px;
+    left: 0;
+    background-color: $yellow;
+    border-radius: 50%;
+  }
+}
+
+.rooms__btn {
+  margin: 0 auto;
+  color: $white;
+  background-color: $orange;
+  border: none;
+
+  .icon-wrapper {
+    margin-left: 20px;
+    color: $orange;
+    background-color: $white;
+  }
+}
+
+.rooms .rooms__btn {
+  width: 100%;
+}
+
+@media(min-width: $min-tablet) {
+  .rooms {
+    background-size: 340px 106px;
+    background-position: calc((100% - 430px) / 2) 40px;
+
+    .container {
+      padding-right: 25px;
+    }
+
+    .rooms__block {
+      position: relative;
+      text-align: left;
+    }
+
+    .picture {
+      margin-left: 0;
+      width: 442px;
+      height: 326px;
+    }
+
+    .item {
+      position: absolute;
+      top: 50%;
+      right: 25px;
+      transform: translateY(-50%);
+      margin-top: 0;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      border-radius: 10px;
+      box-shadow: $shadow-1;
+    }
+
+    .rooms__btn {
+      width: 215px;
+      margin-left: 0;
+    }
+  }
+}
+
+@media(min-width: $min-desktop) {
+  .rooms {
+    background-size: 484px 151px;
+    background-position: calc((100% - 1000px) / 2) 40px;
+
+    .container {
+      padding-left: 168px;
+      padding-right: 148px;
+    }
+
+    .picture {
+      width: 600px;
+      height: 404px;
+    }
+
+    .item {
+      position: absolute;
+      width: 29%;
+      padding: 40px 100px;
+    }
+  }
+
+  .rooms__title {
+    font-size: 22px;
+  }
+}

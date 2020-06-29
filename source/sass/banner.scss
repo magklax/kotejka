@@ -1,0 +1,67 @@
+.banner {
+  height: 457px;
+  padding: 50px 0;
+  text-align: center;
+  box-sizing: border-box;
+  background: $yellow url("../img/banner-main-mobile.jpg") center center no-repeat;
+
+  .title {
+    padding-bottom: 12px;
+  }
+}
+
+.banner__container {
+  padding: 0 21px;
+}
+
+.banner__info {
+  display: block;
+}
+
+.banner .banner__info {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+
+.banner__btn {
+  width: 206px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  color: $text-color;
+  background-color: $white;
+
+  .icon-wrapper {
+    color: $white;
+    background-color: $orange;
+  }
+}
+
+@media(min-width: $min-tablet) {
+  .banner {
+    height: 868px;
+    padding: 130px 0;
+    background-image: url("../img/banner-main-tablet.jpg");
+  }
+
+  .banner__container {
+    padding: 0 21px;
+  }
+}
+
+@media(min-width: $min-desktop) {
+  .banner {
+    height: 504px;
+    padding: 150px 0;
+    background-image: url("../img/banner-main-desktop.jpg");
+    text-align: left;
+
+    .banner__btn {
+      margin-left: 0;
+    }
+  }
+
+  .banner__container {
+    padding: 0 14.5%;
+  }
+}
