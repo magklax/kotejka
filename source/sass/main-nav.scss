@@ -61,11 +61,11 @@
 
   .main-nav__menu {
     position: absolute;
-    width: 100%;
+    width: 100vw;
     height: 457px;
     top: 65px;
-    left: 0;
-    padding: 0 15px;
+    left: calc(50% - 50vw);
+    padding: 0 calc(100vw - 100%);
     box-sizing: border-box;
     background-color: $yellow;
     z-index: 100;
