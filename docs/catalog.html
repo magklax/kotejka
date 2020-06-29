@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Отель Котейка/Каталог</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="stylesheet" href="css/style.min.css">
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=f5141d4e-6171-41e6-88fa-8cd812e04420&lang=ru_RU" type="text/javascript"></script>
+</head>
+<body>
+  <div class="overlay">
+    <header class="page-header">
+      <div class="container">
+        <nav class="main-nav main-nav--closed">
+          <a href="index.html" class="main-nav__logo logo">
+            <picture>
+              <source media="(min-width: 768px)" srcset="img/logo-tablet.png">
+              <img src="img/logo-mobile.png" width="46" height="38" alt="Логотип Котейка">
+            </picture>
+          </a>
+          <button class="main-nav__toggle toggle" type="button" aria-label="Открыть или закрыть меню"></button>
+          <div class="main-nav__menu">
+            <ul class="main-nav__list">
+              <li><a class="main-nav__link" href="index.html#features">Почему мы?</a></li>
+              <li><a class="main-nav__link" href="catalog.html">Номера</a></li>
+              <li><a class="main-nav__link" href="index.html#reviews">Отзывы</a></li>
+              <li><a class="main-nav__link" href="#contacts">Контакты</a></li>
+            </ul>
+            <a class="main-nav__phone" href="tel:+78003335599">8 (800) 333-55-99</a>
+            <ul class="main-nav__social social">
+              <li>
+                <a href="#">
+                  <svg class="icon" width="24" height="24"><use xlink:href="img/sprite.svg#icon-fb"></use></svg>
+                </a>
+              <li>
+                <a href="#">
+                  <svg class="icon" width="24" height="24"><use xlink:href="img/sprite.svg#icon-insta"></use></svg>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <svg class="icon" width="24" height="24"><use xlink:href="img/sprite.svg#icon-vk"></use></svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="rooms--catalog">
+        <div class="container">
+          <h1 class="title title--section">Наши номера</h1>
+
+          <div class="controls">
+            <button id="filters-open" class="filters__btn oval-btn" type="button">Фильтры</button>
+
+            <div class="sorting">
+              <button id="sorting-open" class="sorting__btn oval-btn" type="button" aria-label="Открыть меню сортировки">&uarr; По площади</button>
+              <ul id="sorting-list" tabindex="-1" role="listbox" class="sorting__list">
+                <li id="square-up" class="sorting__item" role="option">&uarr; По площади</li>
+                <li id="square-down" class="sorting__item" role="option">&darr; По площади</li>
+                <li id="price-up" class="sorting__item" role="option">&uarr; По цене</li>
+                <li id="price-down" class="sorting__item" role="option">&darr; По цене</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="rooms__wrapper">
+            <form id="filters-form" action="#" class="filters" autocomplete="off">
+              <button id="filters-close" class="close-popup toggle" type="button" aria-label="Закрыть окно фильтров"></button>
+              <fieldset class="filters__element price">
+                <label class="filters__label" for="min-price">Цена за сутки, ₽</label>
+                <div class="price__wrapper">
+                  <input id="min-price" name="min-price" type="number" placeholder="от 100" min="100" required>
+                  <input id="max-price" name="max-price" type="number" placeholder="до 600" max="600" required>
+                </div>
+              </fieldset>
+              <fieldset id="squareFieldset" class="filters__element checkbox">
+                <legend class="filters__label">Площадь</legend>
+                <ul>
+                  <li>
+                    <input type="checkbox" name="square" value="0.63" id="square-1">
+                    <label for="square-1">0,63 м2</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="square" value="0.90" id="square-2">
+                    <label for="square-2">0,90 м2</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="square" value="1.13" id="square-3">
+                    <label for="square-3">1,13 м2</label>
+                    <li>
+                      <input type="checkbox" name="square" value="1.56" id="square-4">
+                      <label for="square-4">1,56 м2</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" name="square" value="2.56" id="square-5">
+                      <label for="square-5">2,56 м2</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" name="square" value="2.88" id="square-6">
+                      <label for="square-6">2,88 м2</label>
+                    </li>
+                  </li>
+                </ul>
+              </fieldset>
+              <fieldset id="facilityFieldset" class="filters__element checkbox">
+                <legend class="filters__label">Оснащение номера</legend>
+                <ul>
+                  <li>
+                    <input type="checkbox" name="facility" value="Пустой номер" id="facility-1">
+                    <label for="facility-1">Пустой номер</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="facility" value="Лежак" id="facility-2">
+                    <label for="facility-2">Лежак</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="facility" value="Когтеточка" id="facility-3">
+                    <label for="facility-3">Когтеточка</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="facility" value="Игровой комплекс" id="facility-4">
+                    <label for="facility-4">Игровой комплекс</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="facility" value="Домик" id="facility-5">
+                    <label for="facility-5">Домик</label>
+                  </li>
+                </ul>
+              </fieldset>
+              <fieldset class="filters__element filter-btns">
+              <button id="filters-submit" class="oval-btn" type="button" aria-label="Подобрать комнату">Подобрать</button>
+              <button id="filters-reset" class="oval-btn" type="reset" aria-label="Сбросить фильтры">Сбросить фильтр</button>
+            </fieldset>
+            </form>
+            <div class="rooms__index"></div>
+          </div>
+        </div>
+      </section>
+      <div class="container">
+        <article class="banner--page">
+          <h2 class="title">Каждый 7-й день<br><span class="big">бесплатно!</span></h2>
+          <span class="banner__info">Акция действует при размещении в номерах “Люкс” и “Супер-Люкс</span>
+          <a href="catalog.html" class="banner__btn book-btn oval-btn"><span>Забронировать</span><span class="icon-wrapper"><svg width="21" height="18"><use xlink:href="img/sprite.svg#icon-paw"></use></svg></span></a>
+        </article>
+      </div>
+      <section id="contacts" class="contacts">
+        <div class="contacts__container">
+          <h2 class="title title--section">Как нас найти</h2>
+          <ul class="contacts__list">
+            <li class="contacts__item">
+              <h3 class="title">Адрес</h3>
+              <span class="contacts__text">Санкт-Петербург, ул Большая Конюшенная, д 19</span>
+            </li>
+            <li class="contacts__item">
+              <h3 class="title">Режим работы</h3>
+              <span class="contacts__text">Ежедневно, с 9:00 до 20:00</span>
+            </li>
+            <li class="contacts__item">
+              <h3 class="title">Телефон</h3>
+              <span class="contacts__text">8 (800) 333-55-99</span>
+            </li>
+            <li class="contacts__item">
+              <h3 class="title">E-mail</h3>
+              <span class="contacts__text">info@cat-hotel.ru</span>
+            </li>
+            <li class="contacts__item">
+              <h3 class="title">Социальные сети</h3>
+              <ul class="social">
+                <li><a href="#"><svg class="icon" width="24" height="24"><use xlink:href="img/sprite.svg#icon-fb"></use></svg></a></li>
+                <li><a href="#"><svg class="icon" width="24" height="24"><use xlink:href="img/sprite.svg#icon-insta"></use></svg></a></li>
+                <li><a href="#"><svg class="icon" width="24" height="24"><use xlink:href="img/sprite.svg#icon-vk"></use></svg></a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div id="map"></div>
+      </section>
+    </main>
+    <footer class="page-footer">
+      <div class="container">
+        <nav class="footer-nav">
+          <a class="logo" href="index.html">
+            <picture>
+              <source media="(min-width: 768px)" srcset="img/logo-tablet.png">
+              <img src="img/logo-mobile.png" width="46" height="38" alt="Логотип Котейка">
+            </picture>
+          </a>
+          <ul class="footer-nav__list">
+            <li><a class="footer-nav__link" href="#features">Почему мы?</a></li>
+            <li><a class="footer-nav__link" href="#reviews">Отзывы</a></li>
+            <li><a class="footer-nav__link" href="#rooms">Номера</a></li>
+            <li><a class="footer-nav__link" href="#contacts">Как нас найти</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="copyrights container">
+        <span>@ 2019 Все права защищены</span>
+        <a href="#">Политика конфиденциальности</a>
+      </div>
+    </footer>
+  </li>
+
+  <!-- Карточка Комнаты -->
+  <template id="room">
+    <figure class="rooms__block">
+      <picture>
+        <source media="(min-width: 1366px)" srcset="img/room-pic-9-desktop.png">
+        <source media="(min-width: 768px)" srcset="img/room-pic-9-tablet.png">
+        <img class="picture" src="img/room-pic-mobile-9.png" width="290" height="185" alt="Котейка в номере Супер-Люкс">
+      </picture>
+      <figcaption class="item">
+        <h3 class="rooms__title title">Супер-Люкс</h3>
+        <ul class="rooms__params">
+          <li>
+            <span>Размеры (ШхГхВ) - </span>
+            <span class="rooms__size">180х160х180 см</span>
+          </li>
+          <li>
+            <span>Площадь - </span>
+            <span class="rooms__square">2,88 м2</span>
+          </li>
+          <li>
+            <span>Оснащение</span>
+            <ul class="rooms__facilities">
+              <li>
+                <img class="icon" src="img/icon-facs-1.svg" width="" height="" alt="">
+              </li>
+            </ul>
+          <li>
+            <span>Цена за сутки: </span>
+            <span class="rooms__price">600₽</span>
+          </li>
+        </ul>
+        <a href="card.html" class="rooms__btn book-btn oval-btn"><span>Забронировать</span><span class="icon-wrapper"><svg class="icon" width="21" height="18"><use xlink:href="img/sprite.svg#icon-paw"></use></svg></span></a>
+      </figcaption>
+    </figure>
+  </template>
+
+  <script src="scripts/utils-min.js"></script>
+  <script src="scripts/data-min.js"></script>
+  <script src="scripts/render-min.js"></script>
+  <script src="scripts/filter-min.js"></script>
+  <script src="scripts/menu-min.js"></script>
+  <script src="scripts/ymap-min.js"></script>
+</body>
+</html>

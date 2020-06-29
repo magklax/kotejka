@@ -1,0 +1,1 @@
+"use strict";window.utils={isEnterKeycode:(e,s)=>{13===e.keyCode&&s()},isEscKeycode:(e,s)=>{27===e.keyCode&&s()},hideElement:e=>{e.style.display="none"},showElement:e=>{e.style.display="block"}};

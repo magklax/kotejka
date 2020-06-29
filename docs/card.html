@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Отель Котейка/Карточка номера</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="stylesheet" href="css/style.min.css">
+  <script src="scripts/siema.min.js"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=f5141d4e-6171-41e6-88fa-8cd812e04420&lang=ru_RU" type="text/javascript"></script>
+</head>
+<body>
+  <div class="overlay">
+    <header class="page-header">
+      <div class="container">
+        <nav class="main-nav main-nav--closed">
+          <a href="index.html" class="main-nav__logo logo">
+            <picture>
+              <source media="(min-width: 768px)" srcset="img/logo-tablet.png">
+              <img src="img/logo-mobile.png" width="46" height="38" alt="Логотип Котейка">
+            </picture>
+          </a>
+          <button class="main-nav__toggle toggle" type="button" aria-label="Открыть или закрыть меню"></button>
+          <div class="main-nav__menu">
+            <ul class="main-nav__list">
+              <li><a class="main-nav__link" href="index.html#features">Почему мы?</a></li>
+              <li><a class="main-nav__link" href="catalog.html">Номера</a></li>
+              <li><a class="main-nav__link" href="index.html#reviews">Отзывы</a></li>
+              <li><a class="main-nav__link" href="#contacts">Контакты</a></li>
+            </ul>
+            <a class="main-nav__phone" href="tel:+78003335599">8 (800) 333-55-99</a>
+            <ul class="main-nav__social social">
+              <li>
+                <a href="#">
+                  <svg class="icon" width="24" height="24"><use xlink:href="img/sprite.svg#icon-fb"></use></svg>
+                </a>
+              <li>
+                <a href="#">
+                  <svg class="icon" width="24" height="24"><use xlink:href="img/sprite.svg#icon-insta"></use></svg>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <svg class="icon" width="24" height="24"><use xlink:href="img/sprite.svg#icon-vk"></use></svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="rooms--card">
+        <div class="container">
+          <figure class="rooms__block">
+            <div class="rooms__wrapper">
+              <a id="main-picture" class="rooms__picture">
+                <picture>
+                  <source media="(min-width: 1366px)" srcset="img/room-card-desktop-1.png">
+                  <source media="(min-width: 768px)" srcset="img/room-card-tablet-1.png">
+                  <img class="picture" src="img/room-card-mobile-1.png" width="290" height="185" alt="Котейка в номере Супер-Люкс">
+                </picture>
+              </a>
+              <a href="#" class="rooms__picture" data-index="1">
+                <picture>
+                  <source media="(min-width: 1366px)" srcset="img/room-card-desktop-1.png">
+                  <source media="(min-width: 768px)" srcset="img/room-card-tablet-1.png">
+                  <img class="picture" src="img/room-card-mobile-1.png" width="290" height="185" alt="Котейка в номере Супер-Люкс">
+                </picture>
+              </a>
+              <a href="#" class="rooms__picture" data-index="2">
+                <picture>
+                  <source media="(min-width: 1366px)" srcset="img/room-card-desktop-2.png">
+                  <source media="(min-width: 768px)" srcset="img/room-card-tablet-2.png">
+                  <img class="picture" src="img/room-card-mobile-2.png" width="290" height="185" alt="Котейка в номере Супер-Люкс">
+                </picture>
+              </a>
+              <a href="#" class="rooms__picture" data-index="3">
+                <picture>
+                  <source media="(min-width: 1366px)" srcset="img/room-card-desktop-3.png">
+                  <source media="(min-width: 768px)" srcset="img/room-card-tablet-3.png">
+                  <img class="picture" src="img/room-card-mobile-3.png" width="290" height="185" alt="Котейка в номере Супер-Люкс">
+                </picture>
+              </a>
+            </div>
+            <figcaption>
+              <h3 class="title">Супер-Люкс</h3>
+              <ul class="rooms__params">
+                <li>
+                  <span>Размеры (ШхГхВ) - </span>
+                  <span class="rooms__size">180х160х180 см</span>
+                </li>
+                <li>
+                  <span>Площадь - </span>
+                  <span class="rooms__square">2,88 м2</span>
+                </li>
+                <li>
+                  <span>Оснащение номера:</span>
+                  <ul class="rooms__facilities">
+                     <li>
+                      <img class="icon" src="img/icon-facs-2.svg" width="18" height="14" alt=""><span>Лежак</span>
+                    </li>
+                    <li>
+                      <img class="icon" src="img/icon-facs-4.svg" width="16" height="18" alt=""><span>Домик</span>
+                    </li>
+                    <li>
+                      <img class="icon" src="img/icon-facs-5.svg" width="18" height="14" alt=""><span>Игровой комплекс - 3 яруса</span>
+                    </li>
+                    <li>
+                      <img class="icon" src="img/icon-facs-3.svg" width="16" height="18" alt=""><span>Когтеточка</span>
+                    </li>
+                  </ul>
+                <li>
+                  <span>Цена за сутки: </span>
+                  <span class="rooms__price">600₽</span>
+                </li>
+              </ul>
+              <button id="booking-open" class="rooms__btn book-btn oval-btn" type="button" aria-label="Забронировать"><span>Забронировать</span><span class="icon-wrapper"><svg class="icon" width="21" height="18"><use xlink:href="img/sprite.svg#icon-paw"></use></svg></span></button>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+      <section id="rooms" class="rooms section">
+        <div class="container">
+          <h2 class="title title--section">Другие номера</h2>
+          <div id="slider-1" class="slider">
+            <figure class="rooms__block">
+              <picture>
+                <source media="(min-width: 1366px)" srcset="img/room-main-desktop-1.png">
+                <source media="(min-width: 768px)" srcset="img/room-main-tablet-1.png">
+                <img class="picture" src="img/room-main-mobile-1.png" width="290" height="192" alt="Котейка в номере Эконом плюс">
+              </picture>
+              <figcaption class="item">
+                <h3 class="rooms__title title">Эконом плюс</h3>
+                <ul class="rooms__params rooms__params item__text">
+                  <li>Площадь - 0,90 м2</li>
+                  <li>Размеры (ШхГхВ) 90х100х180 см</li>
+                  <li>Цена за сутки: 200₽</li>
+                </ul>
+                <a href="card.html" class="rooms__btn book-btn oval-btn"><span>Забронировать</span><span class="icon-wrapper"><svg class="icon" width="21" height="18"><use xlink:href="img/sprite.svg#icon-paw"></use></svg></span></a>
+              </figcaption>
+            </figure>
+            <figure class="rooms__block">
+              <picture>
+                <source media="(min-width: 1366px)" srcset="img/room-main-desktop-2.png">
+                <source media="(min-width: 768px)" srcset="img/room-main-tablet-2.png">
+                <img class="picture" src="img/room-main-mobile-2.png" width="290" height="192" alt="Котейка в номере Комфорт плюс">
+              </picture>
+              <figcaption class="item">
+                <h3 class="rooms__title title">Комфорт</h3>
+                <ul class="rooms__params">
+                  <li>Площадь - 1.13 м2</li>
+                  <li>Размеры (ШхГхВ) 100х125х180 см</li>
+                  <li>Цена за сутки: 250₽</li>
+                </ul>
+                <a href="card.html" class="rooms__btn book-btn oval-btn"><span>Забронировать</span><span class="icon-wrapper"><svg class="icon" width="21" height="18"><use xlink:href="img/sprite.svg#icon-paw"></use></svg></span></a>
+              </figcaption>
+            </figure>
+            <figure class="rooms__block">
+              <picture>
+                <source media="(min-width: 1366px)" srcset="img/room-main-desktop-3.png">
+                <source media="(min-width: 768px)" srcset="img/room-main-tablet-3.png">
+                <img class="picture" src="img/room-main-mobile-3.png" width="290" height="192" alt="Котейка в номере Сьют">
+              </picture>
+              <figcaption class="item">
+                <h3 class="rooms__title">Сьют</h3>
+                <ul class="rooms__params">
+                  <li>Площадь - 1.56 м2</li>
+                  <li>Размеры (ШхГхВ) 125х125х180 см</li>
+                  <li>Цена за сутки: 350₽</li>
+                </ul>
+                <a href="card.html" class="rooms__btn book-btn oval-btn"><span>Забронировать</span><span class="icon-wrapper"><svg class="icon" width="21" height="18"><use xlink:href="img/sprite.svg#icon-paw"></use></svg></span></a>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="slider__controls">
+            <ul class="slider__dots"></ul>
+            <div class="slider__arrows">
+              <button id="prev-1"></button>
+              <button id="next-1"></button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="container">
+        <article class="banner--page">
+          <h2 class="title">Каждый 7-й день<br><span class="big">бесплатно!</span></h2>
+          <span class="banner__info">Акция действует при размещении в номерах “Люкс” и “Супер-Люкс</span>
+          <a href="#" class="banner__btn book-btn oval-btn"><span>Забронировать</span><span class="icon-wrapper"><svg width="21" height="18"><use xlink:href="img/sprite.svg#icon-paw"></use></svg></span></a>
+        </article>
+      </div>
+      <section id="contacts" class="contacts">
+        <div class="container">
+          <h2 class="title title--section">Как нас найти</h2>
+          <ul class="contacts__list">
+            <li class="contacts__item">
+              <h3 class="title">Адрес</h3>
+              <span class="contacts__text">Санкт-Петербург, ул Большая Конюшенная, д 19</span>
+            </li>
+            <li class="contacts__item">
+              <h3 class="title">Режим работы</h3>
+              <span class="contacts__text">Ежедневно, с 9:00 до 20:00</span>
+            </li>
+            <li class="contacts__item">
+              <h3 class="title">Телефон</h3>
+              <span class="contacts__text">8 (800) 333-55-99</span>
+            </li>
+            <li class="contacts__item">
+              <h3 class="title">E-mail</h3>
+              <span class="contacts__text">info@cat-hotel.ru</span>
+            </li>
+            <li class="contacts__item">
+              <h3 class="title">Социальные сети</h3>
+              <ul class="social">
+                <li><a href="#"><svg class="icon" width="24" height="24"><use xlink:href="img/sprite.svg#icon-fb"></use></svg></a></li>
+                <li><a href="#"><svg class="icon" width="24" height="24"><use xlink:href="img/sprite.svg#icon-insta"></use></svg></a></li>
+                <li><a href="#"><svg class="icon" width="24" height="24"><use xlink:href="img/sprite.svg#icon-vk"></use></svg></a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div id="map"></div>
+      </section>
+    </main>
+    <footer class="page-footer">
+      <div class="container">
+        <nav class="footer-nav">
+          <a class="logo" href="index.html">
+            <picture>
+              <source media="(min-width: 768px)" srcset="img/logo-tablet.png">
+              <img src="img/logo-mobile.png" width="46" height="38" alt="Логотип Котейка">
+            </picture>
+          </a>
+          <ul class="footer-nav__list">
+            <li><a class="footer-nav__link" href="#features">Почему мы?</a></li>
+            <li><a class="footer-nav__link" href="#reviews">Отзывы</a></li>
+            <li><a class="footer-nav__link" href="#rooms">Номера</a></li>
+            <li><a class="footer-nav__link" href="#contacts">Как нас найти</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="copyrights container">
+        <span>@ 2019 Все права защищены</span>
+        <a href="#">Политика конфиденциальности</a>
+      </div>
+    </footer>
+
+    <!-- pop-up -->
+    <form id="booking-form" class="popup popup--booking" autocomplete="off" method="post" action="https://echo.htmlacademy.ru">
+      <h2 class="title">Забронировать номер</h2>
+      <fieldset>
+        <button id="booking-close" class="close-popup toggle" type="button" aria-label="Закрыть окно фильтров"></button>
+        <label for="user-name" class="visually-hidden">Ваше имя</label>
+        <input id="user-name" type="text" name="user-name" placeholder="Ваше имя" required="required">
+        <label for="user-pet-name" class="visually-hidden">Имя Питомца</label>
+        <input id="user-pet-name" type="text" name="user-pet-name" placeholder="Имя Питомца" required="required">
+        <label for="user-phone" class="visually-hidden">Телефон</label>
+        <input id="user-phone" type="tel" name="user-phone" placeholder="Телефон" required="required">
+        <label for="user-email" class="visually-hidden">E-mail</label>
+        <input id="user-email" type="email" name="user-email" placeholder="E-mail" required="required">
+      </fieldset>
+      <fieldset class="popup__wrapper">
+        <span class="popup__dates">Дата заезда</span>
+        <label for="date-in">c</label>
+        <input id="date-in" name="date" value="22/05/2020" type="text" pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d" required="required">
+        <label for="date-out">по</label>
+        <input id="date-out" name="date" value="22/05/2020" type="text" pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d" required="required">
+      </fieldset>
+      <button type="submit" class="rooms__btn book-btn oval-btn"><span>Отправить заявку</span><span class="icon-wrapper"><svg class="icon" width="21" height="18"><use xlink:href="img/sprite.svg#icon-paw"></use></svg></span></button>
+    </form>
+    <article id="confirmation" class="popup popup--confirm">
+      <button id="confirmation-close" class="close-popup toggle" type="button" aria-label="Закрыть окно фильтров"></button>
+      <h2 class="title">Спасибо за заявку!</h2>
+      <span class="popup__message">Мы свяжемся с вами в ближайшее время</span>
+      <button id="confirmation-ok" type="button" class="rooms__btn book-btn oval-btn"><span>Ок</span><span class="icon-wrapper"><svg class="icon" width="21" height="18"><use xlink:href="img/sprite.svg#icon-paw"></use></svg></span></button>
+    </article>
+  </div>
+
+  <script src="scripts/utils-min.js"></script>
+  <script src="scripts/gallery-min.js"></script>
+  <script src="scripts/menu-min.js"></script>
+  <script src="scripts/booking-min.js"></script>
+  <script src="scripts/slider-1-min.js"></script>
+  <script src="scripts/ymap-min.js"></script>
+</body>
+</html>
