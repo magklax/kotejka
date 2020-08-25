@@ -3,10 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <title>Отель Котейка/Каталог</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'>
+  <meta name="HandheldFriendly" content="true">
   <meta name="format-detection" content="telephone=no">
+  <meta name="format-detection" content="address=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
   <link rel="stylesheet" href="css/style.min.css">
-  <script src="https://api-maps.yandex.ru/2.1/?apikey=f5141d4e-6171-41e6-88fa-8cd812e04420&lang=ru_RU" type="text/javascript"></script>
+  <link rel="shortcut icon" href="img/icon-logo.png" type="image/x-icon">
+  <link rel="preload" href="fonts/rubik-700.woff2" as="font">
+  <link rel="preload" href="fonts/rubik-700.woff" as="font">
+  <link rel="preload" href="fonts/rubik-500.woff2" as="font">
+  <link rel="preload" href="fonts/rubik-500.woff" as="font">
+  <link rel="preload" href="fonts/rubik-regular.woff2" as="font">
+  <link rel="preload" href="fonts/rubik-regular.woff" as="font">
+  <link rel="preload" href="fonts/ibm-plex-sans-700.woff2" as="font">
+  <link rel="preload" href="fonts/ibm-plex-sans-700.woff" as="font">
+  <link rel="preload" href="fonts/ibm-plex-sans-500.woff2" as="font">
+  <link rel="preload" href="fonts/ibm-plex-sans-500.woff" as="font">
+  <link rel="preload" href="fonts/ibm-plex-sans-regular.woff2" as="font">
+  <link rel="preload" href="fonts/ibm-plex-sans-regular.woff" as="font">
 </head>
 <body>
   <div class="overlay">
@@ -239,7 +255,8 @@
       </figcaption>
     </figure>
   </template>
-
+  <script src="js/svg4everybody.min.js"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=f5141d4e-6171-41e6-88fa-8cd812e04420&lang=ru_RU" type="text/javascript"></script>
   <script src="scripts/utils.min.js"></script>
   <script src="scripts/data.min.js"></script>
   <script src="scripts/render.min.js"></script>
